@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cifra de César - Criptografia Simples</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main-container">
+    <h1>🧮 Cifra de César</h1>
+    <p class="intro">
+      Descubra como a matemática simples pode proteger informações usando a <strong>Cifra de César</strong> — uma técnica clássica de criptografia!
+    </p>
+
+    <div class="form-box">
+      <label for="texto">🔤 Palavra para criptografar:</label>
+      <input type="text" id="texto" placeholder="Digite uma palavra ou frase" />
+
+      <label for="chave">🔑 Valor da chave (1 a 25):</label>
+      <input type="number" id="chave" min="1" max="25" value="3" />
+
+      <button onclick="criptografar()">Criptografar</button>
+    </div>
+
+    <div class="output-box">
+      <h2>Resultado:</h2>
+      <p id="resultado">🔒 Palavra criptografada: <span class="destaque">---</span></p>
+    </div>
+
+    <div class="steps-box" id="passos"></div>
+
+    <div class="info-box">
+      <h2>🔎 Como funciona?</h2>
+      <p>A Cifra de César é um tipo de criptografia onde cada letra é substituída por outra, avançando um número fixo de posições no alfabeto. Por exemplo, com chave = 2:</p>
+      <pre>a → c | b → d | c → e | ...</pre>
+      <p>A fórmula usada é:</p>
+      <pre>nova_letra = (posição_original + chave) % 26</pre>
+      <p>Esse processo protege mensagens de forma simples. A base da segurança digital moderna começa com ideias assim!</p>
+    </div>
+  </div>
+
+  <script>
+    function criptografar() {
+      const texto = document.getElementById("texto").value.toLowerCase();
+      const chave = parseInt(document.getElementById("chave").value);
+      let resultado = "";
+      let passos = "";
+
+      for (let i = 0; i < texto.length; i++) {
+        const letra = texto[i];
+
+        if (letra >= 'a' && letra <= 'z') {
+          const codigoOriginal = letra.charCodeAt(0);
+          const novoCodigo = ((codigoOriginal - 97 + chave) % 26) + 97;
+          const novaLetra = String.fromCharCode(novoCodigo);
+          resultado += novaLetra;
+
+          passos += `
+            <div class="step">
+              <span class="letra">${letra}</span> → <span class="letra nova">${novaLetra}</span>
+              <span class="cod">(ASCII: ${codigoOriginal} → ${novoCodigo})</span>
+            </div>
+          `;
+        } else {
+          resultado += letra;
+          passos += `
+            <div class="step">
+              <span class="letra">${letra}</span> (mantida)
+            </div>
+          `;
+        }
+      }
+
+      document.getElementById("resultado").innerHTML =
+        '🔒 Palavra criptografada: <span class="destaque">' + resultado + '</span>';
+
+      document.getElementById("passos").innerHTML = "<h3>🧩 Transformações:</h3>" + passos;
+    }
+  </script>
+</body>
+</html>

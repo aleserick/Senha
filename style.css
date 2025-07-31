@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #1e1e2f;
+    color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 30px;
+  }
+  
+  .main-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #2b2b40;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #00d4ff;
+    margin-bottom: 20px;
+  }
+  
+  .intro {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+  }
+  
+  .form-box {
+    background: #3a3a55;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #1e1e2f;
+    border: 1px solid #666;
+    border-radius: 6px;
+    color: #fff;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: linear-gradient(to right, #00bfff, #0088ff);
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background: linear-gradient(to right, #0088ff, #00bfff);
+  }
+  
+  .output-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #343456;
+    border-radius: 10px;
+  }
+  
+  .destaque {
+    font-weight: bold;
+    color: #00ff88;
+  }
+  
+  .steps-box {
+    margin-top: 20px;
+    background-color: #2e2e45;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .step {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  .letra {
+    font-weight: bold;
+    color: #ffc107;
+  }
+  
+  .letra.nova {
+    color: #00ffcc;
+  }
+  
+  .cod {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-left: 10px;
+  }
+  
+  .info-box {
+    margin-top: 30px;
+    background: #1e1e2f;
+    border-left: 4px solid #00d4ff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .info-box pre {
+    background-color: #333;
+    padding: 8px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: monospace;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #0ff;
+  }
+  
